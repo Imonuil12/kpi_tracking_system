@@ -90,6 +90,7 @@ CREATE TABLE EmployeeGoal (
 
 SET session_replication_role = replica;
 
+-- the COPY wouldn't work we use the reccomend Postgres specific one instead
 \copy Department(depID, name, location, companyID) FROM './data/department.csv' CSV HEADER;
 \copy Team(teamID, name, depID) FROM './data/team.csv' CSV HEADER;
 \copy Employee(employeeID, firstName, lastName, email, teamID) FROM './data/employee.csv' CSV HEADER;
